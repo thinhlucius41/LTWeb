@@ -59,9 +59,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dao\ClubsDao.cs" />
     <Compile Include="Dao\FeedBackDao.cs" />
+    <Compile Include="Dao\KetQuaDao.cs" />
+    <Compile Include="Dao\LichDao.cs" />
     <Compile Include="Dao\MenuDao.cs" />
     <Compile Include="Dao\NewsDao.cs" />
+    <Compile Include="Dao\PlayerDao.cs" />
     <Compile Include="Dao\TournamentDao.cs" />
     <Compile Include="Dao\UserDao.cs" />
     <Compile Include="EF\BinhLuan.cs" />

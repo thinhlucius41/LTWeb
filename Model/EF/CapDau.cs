@@ -40,7 +40,7 @@ namespace Model.EF
         [StringLength(50)]
         public string meta { get; set; }
 
-        public bool? hide { get; set; }
+        public bool hide { get; set; }
 
         [Column(TypeName = "image")]
         public byte[] order { get; set; }
