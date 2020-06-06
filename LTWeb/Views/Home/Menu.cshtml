@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Model.EF.menu>
+<span class="menu"></span>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href="/@item.meta">@item.name</a>
+            <ul class="dropdown">
+                @Html.Action("DropDownMenu", "Home", new { Id = @item.Id })
+            </ul>
+        </li>
+    }
+</ul>

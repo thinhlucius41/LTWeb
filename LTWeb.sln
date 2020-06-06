@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LTWeb", "LTWeb\LTWeb.csproj", "{FBA6CC84-B62B-4BF5-AE31-A4C1032BDD72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{04994827-C995-4726-ADA0-4EE22CBA72BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBA6CC84-B62B-4BF5-AE31-A4C1032BDD72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBA6CC84-B62B-4BF5-AE31-A4C1032BDD72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBA6CC84-B62B-4BF5-AE31-A4C1032BDD72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBA6CC84-B62B-4BF5-AE31-A4C1032BDD72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04994827-C995-4726-ADA0-4EE22CBA72BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04994827-C995-4726-ADA0-4EE22CBA72BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04994827-C995-4726-ADA0-4EE22CBA72BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04994827-C995-4726-ADA0-4EE22CBA72BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
