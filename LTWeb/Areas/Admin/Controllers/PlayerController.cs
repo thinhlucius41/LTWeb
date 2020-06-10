@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace LTWeb.Areas.Admin.Controllers
 {
-    public class PlayerController : Controller
+    public class PlayerController : BaseController
     {
         // GET: Admin/Player
         public ActionResult Index(int page =1, int pageSize=10)

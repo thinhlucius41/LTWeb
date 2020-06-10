@@ -38,16 +38,6 @@ namespace Model.EF
                 .IsUnicode(false);
 
             modelBuilder.Entity<CapDau>()
-                .Property(e => e.TySo)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CapDau>()
-                .Property(e => e.MuaGiai)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CapDau>()
                 .HasMany(e => e.CT_CD)
                 .WithRequired(e => e.CapDau)
                 .WillCascadeOnDelete(false);

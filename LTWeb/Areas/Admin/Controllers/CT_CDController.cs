@@ -10,9 +10,9 @@ using Model.EF;
 
 namespace LTWeb.Areas.Admin.Controllers
 {
-    public class CT_CDController : Controller
+    public class CT_CDController : BaseController
     {
-        private LTWebDataContext db = new LTWebDataContext();
+        LTWebDataContext db = new LTWebDataContext();
 
         // GET: Admin/CT_CD
         public ActionResult Index()

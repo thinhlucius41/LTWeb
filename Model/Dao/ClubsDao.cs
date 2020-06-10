@@ -25,7 +25,7 @@ namespace Model.Dao
 
         public IEnumerable<CLB> ListAllPaging(int page, int pageSize)
         {
-            return db.CLBs.OrderByDescending(x => x.dateBegin).ToPagedList(page, pageSize);
+            return db.CLBs.OrderByDescending(x=>x.dateBegin).ToPagedList(page, pageSize);
         }
         public List<GiaiDau> ListAll()
         {
@@ -70,8 +70,8 @@ namespace Model.Dao
         {
             try
             {
-                var cls = db.CLBs.Find(id);
-                db.CLBs.Remove(cls);
+                var i = db.CLBs.Find(id);
+                db.CLBs.Remove(i);
                 db.SaveChanges();
                 return true;
             }

@@ -48,9 +48,6 @@ namespace Model.Dao
                 var item = db.CapDaus.Find(entity.IDcapDau);
                 item.NgayDau = entity.NgayDau;
                 item.GioDau = entity.GioDau;
-                item.DoiNha = entity.DoiNha;
-                item.DoiKhach = entity.DoiKhach;
-                item.MuaGiai = entity.MuaGiai;
                 item.meta = entity.meta;
                 item.hide = entity.hide;
                 item.order = entity.order;

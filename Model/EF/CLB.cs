@@ -25,11 +25,11 @@ namespace Model.EF
         [StringLength(100)]
         public string Logo { get; set; }
 
-        [StringLength(30)]
+        [StringLength(40)]
         public string NguoiSangLap { get; set; }
 
-        [Column(TypeName = "smalldatetime")]
-        public DateTime? NamThanhLap { get; set; }
+        [StringLength(10)]
+        public string NamThanhLap { get; set; }
 
         [StringLength(30)]
         public string ViTri { get; set; }
@@ -46,7 +46,7 @@ namespace Model.EF
 
         public DateTime? dateBegin { get; set; }
 
-        public long? IDGiai { get; set; }
+        public long IDGiai { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CauThu> CauThus { get; set; }

@@ -25,19 +25,6 @@ namespace Model.EF
         public string GioDau { get; set; }
 
         [StringLength(50)]
-        public string DoiNha { get; set; }
-
-        [StringLength(50)]
-        public string DoiKhach { get; set; }
-
-        [StringLength(5)]
-        public string TySo { get; set; }
-
-        [Required]
-        [StringLength(4)]
-        public string MuaGiai { get; set; }
-
-        [StringLength(50)]
         public string meta { get; set; }
 
         public bool hide { get; set; }

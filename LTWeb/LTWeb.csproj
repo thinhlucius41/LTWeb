@@ -1815,7 +1815,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\upload\files\download.jpg" />
-    <Content Include="Content\upload\_thumbs\Files\download.jpg" />
     <Content Include="Content\Website\css\bootstrap.min.css" />
     <Content Include="Content\Website\css\font-awesome.min.css" />
     <Content Include="Content\Website\css\magnific-popup.css" />
@@ -3297,6 +3296,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Content\upload\img\" />
+    <Folder Include="Content\upload\_thumbs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

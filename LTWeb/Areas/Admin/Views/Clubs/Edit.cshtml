@@ -1,5 +1,25 @@
 ﻿@model Model.EF.CLB
 
+@{
+    ViewBag.Title = "Chỉnh sửa";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@section header{
+    Cập nhật CLB
+}
+@section jsFooter{
+    <script>
+        $('#btnSelectImage').on('click', function (e) {
+            e.preventDefault();
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (url) {
+                $('#txtImage').val(url);
+            };
+            finder.popup();
+        })
+        var editor = CKEDITOR.replace('txtContent', { customConfig: '/Plugins/ckeditor/ckeditor/config.js',});
+    </script>
+}
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -21,7 +41,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.IDclb, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.IDclb, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.IDclb, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.IDclb, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -29,7 +49,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.TenClb, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TenClb, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.TenClb, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.TenClb, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -37,7 +57,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Logo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Logo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.Logo, new { htmlAttributes = new { @class = "form-control", @id = "txtImage" }, id = "txtImage" })
+                <input id="btnSelectImage" href="#" name="img" type="file" accept=".jpg,.png,.gif,.bmp">
                 @Html.ValidationMessageFor(model => model.Logo, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -45,7 +66,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.NguoiSangLap, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NguoiSangLap, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.NguoiSangLap, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.NguoiSangLap, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -53,7 +74,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.NamThanhLap, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NamThanhLap, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.NamThanhLap, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.NamThanhLap, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -61,7 +82,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ViTri, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ViTri, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.ViTri, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ViTri, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -69,7 +90,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.GioiThieu, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.GioiThieu, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.GioiThieu, new { htmlAttributes = new { @class = "form-control" }, @id = "txtContent" })
                 @Html.ValidationMessageFor(model => model.GioiThieu, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -77,7 +98,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.meta, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.meta, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.meta, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.meta, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -95,7 +116,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.order, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.order, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.order, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.order, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -105,7 +126,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Cập nhật" class="btn btn-default" />
             </div>
         </div>
     </div>
