@@ -32,11 +32,11 @@ namespace LTWeb.Areas.Admin.Controllers
                 long id = dao.Insert(idcd);
                 if (id > 0)
                 {
-                    return RedirectToAction("Index", "CapDaus");
+                    return RedirectToAction("Index", "Lich");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Thêm cặp đấu thất bại");
+                    ModelState.AddModelError("", "Thêm thất bại");
                 }
             }
             return View("Index");
@@ -55,11 +55,11 @@ namespace LTWeb.Areas.Admin.Controllers
                 bool result = cd.Update(giai);
                 if (result)
                 {
-                    return RedirectToAction("Index", "CapDaus");
+                    return RedirectToAction("Index", "Lich");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Cập nhật cặp đấu thất bại");
+                    ModelState.AddModelError("", "Cập nhật thất bại");
                 }
             }
             return RedirectToAction("Index");
@@ -68,7 +68,7 @@ namespace LTWeb.Areas.Admin.Controllers
         public ActionResult Delete(long id)
         {
             new LichDao().Delete(id);
-            return RedirectToAction("Index", "CapDaus");
+            return RedirectToAction("Index", "Lich");
         }
     }
 }

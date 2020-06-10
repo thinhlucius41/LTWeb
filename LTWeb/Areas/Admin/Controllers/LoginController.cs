@@ -44,12 +44,17 @@ namespace LTWeb.Areas.Admin.Controllers
                 {
                     ModelState.AddModelError("", "Mật khẩu không đúng");
                 }
-                else
+                else 
                 {
                     ModelState.AddModelError("", "Đăng nhập không đúng");
                 }
             }
             return View("Index");
+        }
+        public ActionResult Logout()
+        {
+            Session[CommonConstants.USER_SESSION] = null;
+            return Redirect("Index");
         }
     }
 }

@@ -66,7 +66,7 @@ namespace Model.Dao
 
         public int Login(string Username,string Password)
         {
-            var result = db.users.SingleOrDefault(x => x.TK == Username );
+            var result = db.users.SingleOrDefault(x => x.TK == Username);
             if(result == null) // kt nếu tài khoản có tồn tại
             {
                 return 0;
@@ -77,7 +77,7 @@ namespace Model.Dao
                 {
                     return -1;  
                 }
-                else if(result.MK == Password) // nếu mật khẩu đúng
+                else if(result.MK == Password && result.Role == 1) // nếu mật khẩu đúng và đúng tài khoản admin
                 {
                     return 1;
                 }

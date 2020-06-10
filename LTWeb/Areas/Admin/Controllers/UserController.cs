@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
+using System.Net;
 
 namespace LTWeb.Areas.Admin.Controllers
 {
@@ -22,6 +23,16 @@ namespace LTWeb.Areas.Admin.Controllers
 
             return View(model);
         }
+        public ActionResult Details(int id)
+        {
+            var dao = new UserDao();
+            var user = dao.ViewDetail(id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            return View(user);
+        }
         [HttpGet]
         public ActionResult Create()
         {
@@ -35,6 +46,7 @@ namespace LTWeb.Areas.Admin.Controllers
                 var dao = new UserDao();                
                 var encryptedMD5Pass = Encryptor.MD5Hash(User.MK); // đọc mã hóa và mã hóa mật khẩu
                 User.MK = encryptedMD5Pass;
+                User.Role = 1;
                 long id = dao.Insert(User);
                 if (id > 0)
                 {

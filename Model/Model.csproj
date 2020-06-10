@@ -61,7 +61,6 @@
   <ItemGroup>
     <Compile Include="Dao\ClubsDao.cs" />
     <Compile Include="Dao\FeedBackDao.cs" />
-    <Compile Include="Dao\KetQuaDao.cs" />
     <Compile Include="Dao\LichDao.cs" />
     <Compile Include="Dao\MenuDao.cs" />
     <Compile Include="Dao\NewsDao.cs" />
@@ -79,6 +78,7 @@
     <Compile Include="EF\LTWebDataContext.cs" />
     <Compile Include="EF\menu.cs" />
     <Compile Include="EF\News.cs" />
+    <Compile Include="EF\Role.cs" />
     <Compile Include="EF\user.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -89,6 +89,7 @@
   <ItemGroup>
     <Content Include="Content\PagedList.css" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

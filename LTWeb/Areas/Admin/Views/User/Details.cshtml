@@ -1,0 +1,75 @@
+﻿@model Model.EF.user
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>user</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Role1.TenRole)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Role1.TenRole)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sdt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sdt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hide)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hide)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateBegin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateBegin)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDuser }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

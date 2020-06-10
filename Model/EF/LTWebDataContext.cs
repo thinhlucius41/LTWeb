@@ -22,6 +22,7 @@ namespace Model.EF
         public virtual DbSet<LienHe> LienHes { get; set; }
         public virtual DbSet<menu> menus { get; set; }
         public virtual DbSet<News> News { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<user> users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -79,6 +80,11 @@ namespace Model.EF
             modelBuilder.Entity<News>()
                 .Property(e => e.Hinh)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<Role>()
+                .HasMany(e => e.users)
+                .WithOptional(e => e.Role1)
+                .HasForeignKey(e => e.Role);
 
             modelBuilder.Entity<user>()
                 .Property(e => e.TK)

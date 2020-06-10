@@ -183,9 +183,9 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\ClubsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CT_CDController.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Admin\Controllers\FeedbackController.cs" />
-    <Compile Include="Areas\Admin\Controllers\KetQuaController.cs" />
     <Compile Include="Areas\Admin\Controllers\LichController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
@@ -3227,8 +3227,12 @@
     <Content Include="Areas\Admin\Views\Lich\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Lich\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Lich\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\KetQua\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\KetQua\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\CT_CD\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\CT_CD\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\CT_CD\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\CT_CD\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\CT_CD\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

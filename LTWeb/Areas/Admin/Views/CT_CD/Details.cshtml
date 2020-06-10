@@ -1,0 +1,43 @@
+﻿@model Model.EF.CT_CD
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CT_CD</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CapDau.NgayDau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CapDau.NgayDau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLB.TenClb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLB.TenClb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KetQua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KetQua)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

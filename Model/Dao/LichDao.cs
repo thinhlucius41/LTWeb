@@ -47,7 +47,6 @@ namespace Model.Dao
                 item.GioDau = entity.GioDau;
                 item.DoiNha = entity.DoiNha;
                 item.DoiKhach = entity.DoiKhach;
-                item.TySo = entity.TySo;
                 item.MuaGiai = entity.MuaGiai;
                 item.meta = entity.meta;
                 item.hide = entity.hide;

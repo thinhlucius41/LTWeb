@@ -33,6 +33,7 @@
                                 <th>E-mail</th>
                                 <th>Số điện thoại</th>
                                 <th>Trạng thái</th>
+                                <th>Role</th>
                                 <th>#</th>
                             </tr>
                         </thead>
@@ -43,10 +44,12 @@
                                 <tr id=" row_@item.IDuser">
                                     <td>@item.TK</td>
                                     <td>@item.mail</td>
-                                    <td>@item.sdt</td>
+                                    <td>@item.sdt</td>                        
                                     <td><a  class="btn-active" data-id="@item.IDuser">@Html.Raw(item.hide ? "<strong>Kích hoạt</strong>" : "Khoá")</a></td>
+                                    <td>@item.Role</td>
                                     <td>
                                         <a href="~/Admin/User/Edit/@item.IDuser">Sửa</a>
+                                        <a href="~/Admin/User/Details/@item.IDuser">Chi tiết</a>
                                         @Ajax.ActionLink("Xóa","Delete", new {@id = item.IDuser },new AjaxOptions
                                         {
                                             Confirm="Bạn có chắc xóa user này không ?",
