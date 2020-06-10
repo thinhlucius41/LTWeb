@@ -27,7 +27,10 @@ namespace Model.Dao
         {
             return db.CapDaus.OrderByDescending(x => x.dateBegin).ToPagedList(page, pageSize);
         }
-
+        public List<CLB> ListAll()
+        {
+            return db.CLBs.Where(x=>x.hide== true).ToList();
+        }
         public CapDau GetById(long id)
         {
             return db.CapDaus.SingleOrDefault(x => x.IDcapDau == id);

@@ -21,7 +21,13 @@ namespace LTWeb.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            SetViewBag();
             return View();
+        }
+        public void SetViewBag(long? selectedId = null)
+        {
+            var dao = new LichDao();
+            ViewBag.IDclb = new SelectList(dao.ListAll(), "IDclb", "TenClb", selectedId);
         }
         [HttpPost]
         public ActionResult Create(CapDau idcd)
@@ -44,6 +50,7 @@ namespace LTWeb.Areas.Admin.Controllers
         public ActionResult Edit(long id)
         {
             var giai = new LichDao().ViewDetail(id);
+            SetViewBag();
             return View(giai);
         }
         [HttpPost]

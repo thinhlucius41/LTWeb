@@ -20,7 +20,13 @@ namespace LTWeb.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            SetViewBag();
             return View();
+        }
+        public void SetViewBag(long? selectedId = null)
+        {
+            var dao = new ClubsDao();
+            ViewBag.IDGiai = new SelectList(dao.ListAll(), "IDGiai ", "TenGD", selectedId);
         }
         [HttpPost]
         public ActionResult Create(CLB idgiai)
@@ -43,6 +49,7 @@ namespace LTWeb.Areas.Admin.Controllers
         public ActionResult Edit(long id)
         {
             var giai = new ClubsDao().ViewDetail(id);
+            SetViewBag();
             return View(giai);
         }
         [HttpPost]

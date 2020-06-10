@@ -36,7 +36,13 @@ namespace LTWeb.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            SetViewBag();
             return View();
+        }
+        public void SetViewBag(long? selectedId = null)
+        {
+            var dao = new UserDao();
+            ViewBag.Role = new SelectList(dao.ListAll(), "Id_role ", "TenRole", selectedId);
         }
         [HttpPost]
         public ActionResult Create(user User)
@@ -62,6 +68,7 @@ namespace LTWeb.Areas.Admin.Controllers
         public ActionResult Edit(int id)
         {
             var User = new UserDao().ViewDetail(id);
+            SetViewBag();
             return View(User);
         }
         [HttpPost]

@@ -32,7 +32,10 @@ namespace Model.Dao
 
             return model.OrderByDescending(x => x.dateBegin).ToPagedList(page, pageSize);
         }
-
+        public List<Role> ListAll()
+        {
+            return db.Roles.ToList();
+        }
         public user GetById(string userName)
         {
             return db.users.SingleOrDefault(x => x.TK == userName);
@@ -52,6 +55,7 @@ namespace Model.Dao
                 {
                     user.MK = entity.MK;
                 }
+                user.Role = entity.Role;
                 user.mail = entity.mail;
                 user.sdt = entity.sdt;
                 user.hide = entity.hide;

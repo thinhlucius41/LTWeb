@@ -27,6 +27,10 @@ namespace Model.Dao
         {
             return db.CLBs.OrderByDescending(x => x.dateBegin).ToPagedList(page, pageSize);
         }
+        public List<GiaiDau> ListAll()
+        {
+            return db.GiaiDaus.Where(x=>x.hide== true).ToList();
+        }
 
         public CLB GetById(long id)
         {
@@ -43,6 +47,7 @@ namespace Model.Dao
             try
             {
                 var item = db.CLBs.Find(entity.IDclb);
+                item.IDGiai = entity.IDGiai;
                 item.TenClb = entity.TenClb;
                 item.Logo = entity.Logo;
                 item.NguoiSangLap = entity.NguoiSangLap;

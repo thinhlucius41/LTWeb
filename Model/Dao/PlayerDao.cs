@@ -27,7 +27,10 @@ namespace Model.Dao
         {
             return db.CauThus.OrderByDescending(x => x.dateBegin).ToPagedList(page, pageSize);
         }
-
+        public List<CLB> ListAll()
+        {
+            return db.CLBs.Where(x=>x.hide== true).ToList();
+        }
         public CauThu GetById(long id)
         {
             return db.CauThus.SingleOrDefault(x => x.IDcauThu == id);
@@ -43,6 +46,7 @@ namespace Model.Dao
             try
             {
                 var item = db.CauThus.Find(entity.IDcauThu);
+                item.IDclb = entity.IDclb;
                 item.TenCT = entity.TenCT;
                 item.AnhCT= entity.AnhCT;
                 item.ViTri = entity.ViTri;
