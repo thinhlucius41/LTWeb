@@ -44,9 +44,10 @@ namespace Model.EF
 
         public int? order { get; set; }
 
+        [Column(TypeName = "date")]
         public DateTime? dateBegin { get; set; }
 
-        public long IDGiai { get; set; }
+        public long? IDGiai { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CauThu> CauThus { get; set; }

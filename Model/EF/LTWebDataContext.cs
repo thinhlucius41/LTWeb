@@ -29,18 +29,24 @@ namespace Model.EF
         {
             modelBuilder.Entity<CapDau>()
                 .Property(e => e.NgayDau)
-                .IsFixedLength()
                 .IsUnicode(false);
 
             modelBuilder.Entity<CapDau>()
                 .Property(e => e.GioDau)
-                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CapDau>()
+                .Property(e => e.order)
                 .IsUnicode(false);
 
             modelBuilder.Entity<CapDau>()
                 .HasMany(e => e.CT_CD)
                 .WithRequired(e => e.CapDau)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<CLB>()
+                .Property(e => e.NamThanhLap)
+                .IsUnicode(false);
 
             modelBuilder.Entity<CLB>()
                 .HasMany(e => e.CauThus)

@@ -4,10 +4,9 @@
     ViewBag.Title = "Edit";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
-
-<h2>Edit</h2>
-
-
+@section header{
+    Cập nhật kết quả
+}
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
