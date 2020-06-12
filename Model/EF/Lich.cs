@@ -6,26 +6,33 @@ namespace Model.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("CapDau")]
-    public partial class CapDau
+    [Table("Lich")]
+    public partial class Lich
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CapDau()
+        public Lich()
         {
             LichCapDaus = new HashSet<LichCapDau>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public long ID_capdau { get; set; }
+        public long ID_lich { get; set; }
 
-        public long? IDclbNha { get; set; }
+        [StringLength(20)]
+        public string NgayDau { get; set; }
 
-        public long? IDclbKhach { get; set; }
+        [StringLength(10)]
+        public string GioDau { get; set; }
 
-        public virtual CLB CLB { get; set; }
+        [StringLength(50)]
+        public string meta { get; set; }
 
-        public virtual CLB CLB1 { get; set; }
+        public bool hide { get; set; }
+
+        public DateTime? dateBegin { get; set; }
+
+        [StringLength(10)]
+        public string order { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LichCapDau> LichCapDaus { get; set; }

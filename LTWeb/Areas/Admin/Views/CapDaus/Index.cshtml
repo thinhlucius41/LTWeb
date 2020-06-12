@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Model.EF.CapDau>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@section header{
+    Danh sách cặp đấu
+}
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CLB.TenClb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLB1.TenClb)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLB.TenClb)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLB1.TenClb)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_capdau }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_capdau }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_capdau })
+        </td>
+    </tr>
+}
+
+</table>

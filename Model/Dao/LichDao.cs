@@ -16,36 +16,36 @@ namespace Model.Dao
             db = new LTWebDataContext();
         }
 
-        public long Insert(CapDau entity)
+        public long Insert(Lich entity)
         {
-            db.CapDaus.Add(entity);
+            db.Liches.Add(entity);
             db.SaveChanges();
-            return entity.IDcapDau;
+            return entity.ID_lich;
         }
 
-        public IEnumerable<CapDau> ListAllPaging(int page, int pageSize)
+        public IEnumerable<Lich> ListAllPaging(int page, int pageSize)
         {
-            return db.CapDaus.OrderByDescending(x => x.dateBegin).ToPagedList(page, pageSize);
+            return db.Liches.OrderByDescending(x => x.dateBegin).ToPagedList(page, pageSize);
         }
         public List<CLB> ListAll()
         {
             return db.CLBs.Where(x=>x.hide== true).ToList();
         }
-        public CapDau GetById(long id)
+        public Lich GetById(long id)
         {
-            return db.CapDaus.SingleOrDefault(x => x.IDcapDau == id);
+            return db.Liches.SingleOrDefault(x => x.ID_lich == id);
         }
 
-        public CapDau ViewDetail(long ID)
+        public Lich ViewDetail(long ID)
         {
-            return db.CapDaus.Find(ID);
+            return db.Liches.Find(ID);
         }
 
-        public bool Update(CapDau entity)
+        public bool Update(Lich entity)
         {
             try
             {
-                var item = db.CapDaus.Find(entity.IDcapDau);
+                var item = db.Liches.Find(entity.ID_lich);
                 item.NgayDau = entity.NgayDau;
                 item.GioDau = entity.GioDau;
                 item.meta = entity.meta;
@@ -64,8 +64,8 @@ namespace Model.Dao
         {
             try
             {
-                var cd = db.CapDaus.Find(id);
-                db.CapDaus.Remove(cd);
+                var cd = db.Liches.Find(id);
+                db.Liches.Remove(cd);
                 db.SaveChanges();
                 return true;
             }

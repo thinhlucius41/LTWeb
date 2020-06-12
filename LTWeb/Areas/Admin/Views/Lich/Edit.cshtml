@@ -1,12 +1,13 @@
-﻿@model Model.EF.CapDau
+﻿@model  Model.EF.Lich
 
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Edit</h2>
-
+@section header{
+    Cập nhật lịch thi đấu
+}
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -15,7 +16,7 @@
         <h4>CapDau</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.IDcapDau)
+        @Html.HiddenFor(model => model.ID_lich)
 
         <div class="form-group">
             @Html.LabelFor(model => model.NgayDau, htmlAttributes: new { @class = "control-label col-md-2" })

@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Model.EF.LichCapDau>
+
+@foreach (var item in Model)
+{
+    <div class="mc-table">
+        <table>
+            <tbody>
+                <tr>
+                    @Html.Action("ListDuelAComingNext", "LichThiDau", new { Id = @item.IDCapdau })
+                    @Html.Action("ListMacthComingNext","LichThiDau", new { Id = @item.IDLich })
+                    @Html.Action("ListDuelBComingNext", "LichThiDau", new { Id = @item.IDCapdau })
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}

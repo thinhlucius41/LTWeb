@@ -24,7 +24,7 @@ namespace LTWeb.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create(CapDau idcd)
+        public ActionResult Create(Lich idcd)
         {
             if (ModelState.IsValid)
             {
@@ -47,7 +47,7 @@ namespace LTWeb.Areas.Admin.Controllers
             return View(giai);
         }
         [HttpPost]
-        public ActionResult Edit(CapDau giai)
+        public ActionResult Edit(Lich giai)
         {
             if (ModelState.IsValid)
             {

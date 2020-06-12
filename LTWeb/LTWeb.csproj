@@ -182,10 +182,11 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CapDausController.cs" />
     <Compile Include="Areas\Admin\Controllers\ClubsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\CT_CDController.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Admin\Controllers\FeedbackController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LichCapDausController.cs" />
     <Compile Include="Areas\Admin\Controllers\LichController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
@@ -199,6 +200,7 @@
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LichThiDauController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TinTucController.cs" />
     <Compile Include="Global.asax.cs">
@@ -3228,11 +3230,16 @@
     <Content Include="Areas\Admin\Views\Lich\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Lich\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\User\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\CT_CD\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\CT_CD\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\CT_CD\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\CT_CD\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\CT_CD\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\CapDaus\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\CapDaus\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\CapDaus\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\CapDaus\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\CapDaus\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\LichCapDaus\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\LichCapDaus\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\LichCapDaus\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\LichCapDaus\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\LichCapDaus\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -3294,6 +3301,10 @@
     <Content Include="Views\Home\DropDownMenu.cshtml" />
     <Content Include="Views\TinTuc\FirstNews.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\LichThiDau\ListMacthComingNext.cshtml" />
+    <Content Include="Views\LichThiDau\ListDuelAComingNext.cshtml" />
+    <Content Include="Views\LichThiDau\ListDuelBComingNext.cshtml" />
+    <Content Include="Views\LichThiDau\LichDau.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

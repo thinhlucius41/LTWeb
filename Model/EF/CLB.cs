@@ -12,8 +12,9 @@ namespace Model.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CLB()
         {
+            CapDaus = new HashSet<CapDau>();
+            CapDaus1 = new HashSet<CapDau>();
             CauThus = new HashSet<CauThu>();
-            CT_CD = new HashSet<CT_CD>();
         }
 
         [Key]
@@ -50,11 +51,14 @@ namespace Model.EF
         public long? IDGiai { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CapDau> CapDaus { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CapDau> CapDaus1 { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CauThu> CauThus { get; set; }
 
         public virtual GiaiDau GiaiDau { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CT_CD> CT_CD { get; set; }
     }
 }

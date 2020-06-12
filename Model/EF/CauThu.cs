@@ -21,7 +21,7 @@ namespace Model.EF
         [Column(TypeName = "image")]
         public byte[] AnhCT { get; set; }
 
-        public bool hide { get; set; }
+        public bool? hide { get; set; }
 
         public long IDclb { get; set; }
 

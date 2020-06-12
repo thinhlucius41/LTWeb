@@ -1,9 +1,10 @@
-﻿@model Model.EF.CT_CD
+﻿@model Model.EF.LichCapDau
 
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
+
 @section header{
     Cập nhật kết quả
 }
@@ -12,12 +13,12 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>CT_CD</h4>
+        <h4>LichCapDau</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.IDcapDau)
+        @Html.HiddenFor(model => model.IDCapdau)
 
-        @Html.HiddenFor(model => model.IDclb)
+        @Html.HiddenFor(model => model.IDLich)
 
         <div class="form-group">
             @Html.LabelFor(model => model.KetQua, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -39,6 +40,3 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

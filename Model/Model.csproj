@@ -71,9 +71,10 @@
     <Compile Include="EF\CapDau.cs" />
     <Compile Include="EF\CauThu.cs" />
     <Compile Include="EF\CLB.cs" />
-    <Compile Include="EF\CT_CD.cs" />
     <Compile Include="EF\Footer.cs" />
     <Compile Include="EF\GiaiDau.cs" />
+    <Compile Include="EF\Lich.cs" />
+    <Compile Include="EF\LichCapDau.cs" />
     <Compile Include="EF\LienHe.cs" />
     <Compile Include="EF\LTWebDataContext.cs" />
     <Compile Include="EF\menu.cs" />
