@@ -1,0 +1,19 @@
+﻿@model Model.EF.News
+    <div class="ni-pic set-bg" style="background-image: url(@Html.DisplayFor(model => model.Hinh))">
+                                <div class="ni-tag">Soccer</div>s
+                            </div>
+                            <div class="ni-text">
+                                <h4><a href="#">@Html.DisplayFor(model => model.TieuDe)</a></h4>
+                                <ul>
+                                    <li><i class="fa fa-calendar"></i>@Html.DisplayFor(model => model.dateBegin)</li>
+                                    <li><i class="fa fa-edit"></i>@Html.DisplayFor(model => model.ViewCount)</li>
+                                </ul>
+                                <p>
+                                    It’s that time again when people start thinking about their New Years
+                                    Resolutions. Usually they involve, losing weight, quitting smoking, and joining
+                                    a gym, just to mention a few.
+                                </p>
+                            </div>
+
+
+
