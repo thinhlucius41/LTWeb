@@ -14,7 +14,7 @@ namespace LTWeb.Areas.Admin.Controllers
     public class UserController : BaseController
     {
         // GET: Admin/User
-        public ActionResult Index(string searchString,int page =1,int pageSize = 1)
+        public ActionResult Index(string searchString,int page =1,int pageSize = 5)
         {
             var dao = new UserDao();
             var model = dao.ListAllPaging(searchString,page, pageSize);
@@ -52,7 +52,6 @@ namespace LTWeb.Areas.Admin.Controllers
                 var dao = new UserDao();                
                 var encryptedMD5Pass = Encryptor.MD5Hash(User.MK); // đọc mã hóa và mã hóa mật khẩu
                 User.MK = encryptedMD5Pass;
-                User.Role = 1;
                 long id = dao.Insert(User);
                 if (id > 0)
                 {

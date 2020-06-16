@@ -6,9 +6,15 @@
         <table>
             <tbody>
                 <tr>
-                    @Html.Action("ListDuelAComingNext", "LichThiDau", new { Id = @item.IDCapdau })
-                    @Html.Action("ListMacthComingNext","LichThiDau", new { Id = @item.IDLich })
-                    @Html.Action("ListDuelBComingNext", "LichThiDau", new { Id = @item.IDCapdau })
+                    <td class="left-team">
+                        <img src="img/match/tf-5.jpg" alt="">
+                        <h6>@item.IDclbNha</h6>
+                    </td>                  
+                    @Html.Action("hienthiLichDau", "LichThiDau", new { idlich = @item.IDLich})
+                    <td class="right-team">
+                        <img src="img/match/tf-6.jpg" alt="">
+                        <h6>@item.IDclbKhach</h6>
+                    </td>
                 </tr>
             </tbody>
         </table>

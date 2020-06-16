@@ -199,8 +199,11 @@
     <Compile Include="Common\Encryptor.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClubsInfoController.cs" />
+    <Compile Include="Controllers\CusLoginController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LichThiDauController.cs" />
+    <Compile Include="Controllers\HomeLoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TinTucController.cs" />
     <Compile Include="Global.asax.cs">
@@ -3301,16 +3304,23 @@
     <Content Include="Views\Home\DropDownMenu.cshtml" />
     <Content Include="Views\TinTuc\FirstNews.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\LichThiDau\ListMacthComingNext.cshtml" />
     <Content Include="Views\LichThiDau\ListDuelAComingNext.cshtml" />
     <Content Include="Views\LichThiDau\ListDuelBComingNext.cshtml" />
     <Content Include="Views\LichThiDau\LichDau.cshtml" />
+    <Content Include="Views\LichThiDau\hienthiLichDau.cshtml" />
+    <Content Include="Views\HomeLogin\Index.cshtml" />
+    <Content Include="Views\TinTuc\Details.cshtml" />
+    <Content Include="Views\TinTuc\HomeListNews.cshtml" />
+    <Content Include="Views\ClubsInfo\Index.cshtml" />
+    <Content Include="Views\ClubsInfo\Details.cshtml" />
+    <Content Include="Views\TinTuc\PageNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Content\upload\img\" />
     <Folder Include="Content\upload\_thumbs\" />
+    <Folder Include="Views\CusLogin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

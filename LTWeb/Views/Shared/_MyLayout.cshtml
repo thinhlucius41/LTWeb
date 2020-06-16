@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿
+
+<!DOCTYPE html>
 <html lang="zxx">
 
 <head>
@@ -49,8 +51,8 @@
             <div class="ht-info">
                 <ul>
                     <li>20:00 - May 19, 2019</li>
-                    <li><a href="#">Sign in</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Đăng nhập</a></li>
+                    <li><a href="#">Đăng ký</a></li>
                 </ul>
             </div>
             <div class="ht-links">
@@ -63,18 +65,18 @@
         </div>
         <ul class="main-menu mobile-menu">
             <li class="active"><a href="./index.html">Home</a></li>
-            <li><a href="./club.html">Club</a></li>
-            <li><a href="./schedule.html">Schedule</a></li>
-            <li><a href="./result.html">Results</a></li>
+            <li><a href="/ClubInfo/Index">Clubs</a></li>
+            <li><a href="./schedule.html">Lịch đấu</a></li>
+            <li><a href="./result.html">Kết quả</a></li>
             <li><a href="#">Sport</a></li>
             <li>
-                <a href="#">Pages</a>
-                <ul class="dropdown">
+                <a href="/Tintuc/PageNews">Bài báo</a>
+                @*<ul class="dropdown">
                     <li><a href="./blog.html">Blog</a></li>
                     <li><a href="./blog-details.html">Blog Details</a></li>
                     <li><a href="#">Schedule</a></li>
                     <li><a href="#">Results</a></li>
-                </ul>
+                </ul>*@
             </li>
             <li><a href="./contact.html">Contact Us</a></li>
         </ul>
@@ -90,8 +92,16 @@
                         <div class="ht-info">
                             <ul>
                                 <li>20:00 - May 19, 2019</li>
-                                <li><a href="#">Đăng nhập</a></li>
-                                <li><a href="#">Liên hệ</a></li>
+                                @if (Session["USER_SESSION"] == null)
+                                {
+                                    <li><a href="/HomeLogin/Index">Đăng nhập</a></li>
+                                    <li><a href="#">Đăng ký</a></li>
+                                }
+                                else
+                                {
+                                    <li><a href="/Home/Index">Đăng xuất</a></li>
+                                    Session.Remove("USER_SESSION");
+                                }
                             </ul>
                         </div>
                     </div>
@@ -112,7 +122,7 @@
                 <div class="row">
                     <div class="col-lg-2">
                         <div class="logo">
-                            <a href="./index.html"><img src="~/Content/Website/img/logo.png" alt=""></a>
+                            <a href="/)"><img src="~/Content/Website/img/logo.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-10">

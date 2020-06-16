@@ -35,7 +35,7 @@ namespace Model.Dao
         {
             return db.Liches.SingleOrDefault(x => x.ID_lich == id);
         }
-
+        
         public Lich ViewDetail(long ID)
         {
             return db.Liches.Find(ID);

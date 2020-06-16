@@ -81,8 +81,10 @@ CKEDITOR.editorConfig = function (config) {
     config.youtube_privacy = false;
    
     //config.extraPlugins = 'tabletoolstoolbar';
-    
-    
+
+    //Enable to  have p tab in textS
+    config.enterMode                = CKEDITOR.ENTER_DIV;
+    config.shiftEnterMode            = CKEDITOR.ENTER_BR;
 
     CKFinder.setupCKEditor(null, "/Plugins/ckfinder/ckfinder");
 };

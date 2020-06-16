@@ -54,10 +54,10 @@ namespace Model.Dao
                 if (!string.IsNullOrEmpty(entity.MK))
                 {
                     user.MK = entity.MK;
-                }
-                user.Role = entity.Role;
+                }              
                 user.mail = entity.mail;
                 user.sdt = entity.sdt;
+                user.Role = entity.Role;
                 user.hide = entity.hide;
                 db.SaveChanges();
                 return true;
@@ -88,6 +88,33 @@ namespace Model.Dao
                 else                       // nếu mật khẩu sai
                 {
                     return -2;
+                }
+            }
+        }
+        public int HomeLogin(string Username, string Password)
+        {
+            var result = db.users.SingleOrDefault(x => x.TK == Username);
+            if (result == null) // kt nếu tài khoản có tồn tại
+            {
+                return 0;
+            }
+            else
+            {
+                if (result.hide == false) // nếu hide = false thì username đang bị khóa;
+                {
+                    return -1;
+                }
+                else if (result.MK == Password ) // nếu mật khẩu đúng và đúng tài khoản admin
+                {
+                    return 1;
+                }
+                else if (result.MK != Password)                      // nếu mật khẩu sai
+                {
+                    return -2;
+                }
+                else
+                {
+                    return -3;
                 }
             }
         }

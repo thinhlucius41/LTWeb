@@ -33,7 +33,10 @@ namespace Model.Dao
 
             return model.OrderByDescending(x => x.dateBegin).ToPagedList(page, pageSize);
         }
-
+        public IEnumerable<News> ListAllPageNews(int page, int pageSize)
+        {
+            return db.News.OrderByDescending(x => x.IDnews).ToPagedList(page, pageSize);
+        }
         public News GetById(long id)
         {
             return db.News.SingleOrDefault(x => x.IDnews == id);
