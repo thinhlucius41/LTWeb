@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace LTWeb.Common
+namespace LTWeb
 {
     [Serializable]
     public class UserLogin

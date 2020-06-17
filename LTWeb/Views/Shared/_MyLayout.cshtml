@@ -1,6 +1,4 @@
-﻿
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zxx">
 
 <head>
@@ -91,17 +89,7 @@
                     <div class="col-lg-6">
                         <div class="ht-info">
                             <ul>
-                                <li>20:00 - May 19, 2019</li>
-                                @if (Session["USER_SESSION"] == null)
-                                {
-                                    <li><a href="/HomeLogin/Index">Đăng nhập</a></li>
-                                    <li><a href="#">Đăng ký</a></li>
-                                }
-                                else
-                                {
-                                    <li><a href="/Home/Index">Đăng xuất</a></li>
-                                    Session.Remove("USER_SESSION");
-                                }
+                                @RenderPage("TopMenuView.cshtml")
                             </ul>
                         </div>
                     </div>

@@ -201,6 +201,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ClubsInfoController.cs" />
     <Compile Include="Controllers\CusLoginController.cs" />
+    <Compile Include="Controllers\DangKyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LichThiDauController.cs" />
     <Compile Include="Controllers\HomeLoginController.cs" />
@@ -212,6 +213,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\RegisterDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -3314,6 +3316,10 @@
     <Content Include="Views\ClubsInfo\Index.cshtml" />
     <Content Include="Views\ClubsInfo\Details.cshtml" />
     <Content Include="Views\TinTuc\PageNews.cshtml" />
+    <Content Include="Views\DangKy\Register.cshtml" />
+    <Content Include="Views\DangKy\Detail.cshtml" />
+    <Content Include="Views\DangKy\Update.cshtml" />
+    <Content Include="Views\Shared\TopMenuView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

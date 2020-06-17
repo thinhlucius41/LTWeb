@@ -1,0 +1,21 @@
+﻿@model Model.EF.user
+
+<li>Ngày</li>
+@{ 
+    var session = (UserLogin)Session[LTWeb.Common.CommonConstants.USER_SESSION];
+}
+@if (session == null)
+{
+    <li><a href="/dang-nhap">Đăng nhập</a></li>
+    <li><a href="/dang-ky">Đăng ký</a></li>
+}
+else
+{
+    <li>Xin chào : @session.UserName</li>
+    <li>
+        <a href="@Url.Action("Detail","DangKy",new { id = session.UserID})">
+            Thông tin tài khoản
+        </a>
+    </li>
+    <li>@Html.ActionLink("Đăng xuất", "Logout", "HomeLogin")</li>
+}

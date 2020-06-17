@@ -11,15 +11,21 @@ namespace LTWeb.Controllers
     public class TinTucController : Controller
     {
         // GET: TinTuc
-        public ActionResult Index()
-        {
-            return View();
-        }
-        public ActionResult FirstNews()
+        public ActionResult Index(string meta)
         {
             LTWebDataContext db = new LTWebDataContext();
+            var d = from a in db.News
+                    where a.meta == meta
+                    select a;
+            return View(d.FirstOrDefault());
+        }
+        [ChildActionOnly]
+        public PartialViewResult FirstNews(string metatitle)
+        {
+            ViewBag.meta = metatitle;
+            LTWebDataContext db = new LTWebDataContext();
             var d = from m in db.News
-                    where m.hide == true
+                    where m.hide == true 
                     orderby m.IDnews descending
                     select m;
             return PartialView(d.ToList());
@@ -30,8 +36,10 @@ namespace LTWeb.Controllers
             var model = new NewsDao().ViewDetail(id);
             return View(model);
         }
-        public ActionResult HomeListNews()
+        [ChildActionOnly]
+        public PartialViewResult HomeListNews(string metatitle)
         {
+            ViewBag.meta = metatitle;
             LTWebDataContext db = new LTWebDataContext();
             var d = from m in db.News
                     where m.hide == true 

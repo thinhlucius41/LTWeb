@@ -1,11 +1,11 @@
 ﻿using LTWeb.Areas.Admin.Models;
 using LTWeb.Common;
-using Model.Dao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using LTWeb.Models;
 
 namespace LTWeb.Controllers
 {
@@ -21,7 +21,7 @@ namespace LTWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                var dao = new UserDao();
+                var dao = new RegisterDao();
                 var result = dao.HomeLogin(model.UserName, Encryptor.MD5Hash(model.PassWord));
                 if (result == 1)
                 {
@@ -54,7 +54,7 @@ namespace LTWeb.Controllers
         public ActionResult Logout()
         {
             Session[CommonConstants.USER_SESSION] = null;
-            return RedirectToAction("Index","Home");
+            return Redirect("/trang-chu");
         }
     }
 }
